@@ -1,0 +1,8 @@
+docker-tomcat-app/.idea/.gitignore
+docker-tomcat-app/.idea/docker-tomcat-app.iml
+docker-tomcat-app/.idea/misc.xml
+docker-tomcat-app/.idea/modules.xml
+docker-tomcat-app/.idea/vcs.xml
+docker-tomcat-app/*.war
+docker-tomcat-app/*.log
+docker-tomcat-app/*.tmp

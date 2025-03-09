@@ -1,0 +1,8 @@
+
+# Maven target directory
+#This tells Git: 👉 Ignore anything inside any /target/ folder at the root.
+/target/
+
+*.iml
+*/*.log
+*/*.tmp

@@ -1,0 +1,22 @@
+# Use official Tomcat base image
+FROM tomcat:latest
+
+# Sets the working directory inside the container.
+# Any following file commands (like COPY) will operate relative to this directory.
+# webapps/ is where Tomcat expects deployed applications (WAR files or exploded folders).
+
+WORKDIR /usr/local/tomcat/webapps/
+
+
+
+# Copy the WAR file to Tomcat webapps directory
+COPY app.war .
+
+# Expose port 8080
+EXPOSE 8080
+
+# Start Tomcat
+# Specifies the default command to run when the container starts.
+# catalina.sh is Tomcat’s startup script.
+# "run" tells Tomcat to run in the foreground, which is essential for Docker (otherwise, the container would exit immediately).
+CMD ["catalina.sh", "run"]

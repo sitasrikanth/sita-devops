@@ -1,22 +1,20 @@
-# Use official Tomcat base image
+FROM maven:3.9.0-eclipse-temurin-17 AS build
+
+//assumi
+WORKDIR /app
+
+# Clone your GitHub repo (replace with your repo URL)
+RUN git clone https://github.com/sitasrikanth/sita-devops.git sita-devops
+
+# Optionally checkout a branch or tag
+# RUN git checkout main
+
+WORKDIR /app/sita-devops/docker-tomcat-app
+
+
+RUN mvn clean install
 FROM tomcat:latest
-
-# Sets the working directory inside the container.
-# Any following file commands (like COPY) will operate relative to this directory.
-# webapps/ is where Tomcat expects deployed applications (WAR files or exploded folders).
-
-WORKDIR /usr/local/tomcat/webapps/
-
-
-
-# Copy the WAR file from current directory to Tomcat webapps directory 
-COPY /target/app.war .
-
-# Expose port 8080
+COPY --from=build /app/sita-devops/docker-tomcat-app/target/app.war /usr/local/tomcat/webapps
 EXPOSE 8080
-
-# Start Tomcat
-# Specifies the default command to run when the container starts.
-# catalina.sh is Tomcat’s startup script.
-# "run" tells Tomcat to run in the foreground, which is essential for Docker (otherwise, the container would exit immediately).
 CMD ["catalina.sh", "run"]
+

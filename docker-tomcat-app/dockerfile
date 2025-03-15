@@ -1,6 +1,8 @@
 FROM maven:3.9.0-eclipse-temurin-17 AS build
 
-//assumi
+#If /app doesn't exist yet, Docker creates it automatically.
+#If /app already exists (e.g., from a previous WORKDIR or from a COPY instruction that made the directory), Docker just #switches to it
+
 WORKDIR /app
 
 # Clone your GitHub repo (replace with your repo URL)

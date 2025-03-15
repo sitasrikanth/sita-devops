@@ -8,10 +8,12 @@ WORKDIR /app
 # Clone your GitHub repo (replace with your repo URL)
 RUN git clone https://github.com/sitasrikanth/sita-devops.git sita-devops
 
-# Optionally checkout a branch or tag
-# RUN git checkout main
 
 WORKDIR /app/sita-devops/docker-tomcat-app
+
+# Optionally checkout a branch or tag
+RUN git checkout navaneetha/updating_index_file_new
+
 
 
 RUN mvn clean install

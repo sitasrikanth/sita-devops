@@ -4,12 +4,12 @@
                              http://maven.apache.org/xsd/maven-4.0.0.xsd">
                              
     <modelVersion>4.0.0</modelVersion>
-<plugin>
+
     <groupId>com.ss</groupId>
     <artifactId>docker-tomcat-app</artifactId>
     <version>3.4.0</version>
     <packaging>war</packaging>
-</plugin>        
+ 
 
     <name>docker-tomcat-app</name>
 

@@ -8,5 +8,31 @@
     <h1>Welcome to Tomcat in Docker!</h1>
     <h2>Level-2: Deploying tomcat in a docker container using docker file !</h2>
     <h3>Level-2.1: war is generated automatically and using git clone and tomcat to deploy via docker file !</h3>
+    <h3>
+	        <script type="text/javascript">
+        let myDate = new Date();
+        let myDay = myDate.getDay();
+
+        // Array of days.
+        let weekday = ['Sunday', 'Monday', 'Tuesday',
+            'Wednesday', 'Thursday', 'Friday', 'Saturday'
+        ];
+        document.write("Today is : " + weekday[myDay]);
+        document.write("<br/>");
+
+        // get hour value.
+        let hours = myDate.getHours();
+        let ampm = hours >= 12 ? 'PM' : 'AM';
+        hours = hours % 12;
+        hours = hours ? hours : 12;
+        let minutes = myDate.getMinutes();
+        minutes = minutes < 10 ? '0' + minutes : minutes;
+        let myTime = hours + " " + ampm + " : " + minutes +
+            " : " + myDate.getMilliseconds();
+        document.write("\tCurrent time is : " + myTime);
+    </script>
+
+    </h3>
+
 </body>
 </html>
